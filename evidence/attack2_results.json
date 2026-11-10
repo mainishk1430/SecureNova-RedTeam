@@ -1,0 +1,26 @@
+{
+    "test": "Agent Identity Spoofing",
+    "timestamp": "2026-11-10T06:20:33.980950+00:00",
+    "agents": {
+        "orchestrator": "agent-orchestrator-01",
+        "worker": "agent-worker-02",
+        "attacker": "agent-attacker-99"
+    },
+    "spoofed_message": {
+        "claimed_sender": "agent-orchestrator-01",
+        "actual_sender": "agent-attacker-99",
+        "action": "DELETE_TEST_RECORD",
+        "privileged": true
+    },
+    "vulnerable_agent": {
+        "status": "ATTACK_SUCCEEDED",
+        "action_executed": "DELETE_TEST_RECORD",
+        "reason": "Claimed identity trusted without verification."
+    },
+    "secure_agent": {
+        "status": "ATTACK_BLOCKED",
+        "action_executed": null,
+        "reason": "Authenticated sender identity mismatch."
+    },
+    "simulation_limitation": "Deterministic local simulation, not a real authenticated multi-agent protocol."
+}
